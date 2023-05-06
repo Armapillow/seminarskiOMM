@@ -15,3 +15,9 @@ japansku vojsku, respektivno.
 * Ukoliko je potrebno da se pobeda ostvari za 28 dana, koliko vojnika je
   neophodno da Amerikanci imaju u početku?
   * ![](./resursi/bitka30.jpg)
+
+
+Radili:
+* Danilo Matić
+* Marija Škorić
+* Radovan Božić
