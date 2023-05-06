@@ -1,24 +1,24 @@
+% Pocetni broj Japanaca
+J0      = 21500;
+% Stopa efikasnosti japanske vojske
+efiJap  = 0.0544;
+% Pocetni broj Amerikanaca
+A0      = 54000;
+% Stopa efikasnosti americke vojske
+efiAmer = 0.0106;
 
-b = 0.0544;    % bitan redosled!
-a = 0.0106;
-A0 = 21500;
-B0 = 54000;
+% Pomocna promenljiva
+koren = sqrt(efiJap * efiAmer);
 
-ab = sqrt(a * b);
+% Jednacina za Amerikance koja zavisi od t
+c1 = (koren*A0 - efiJap*J0)/(2*koren);
+c2 = (koren*A0 + efiJap*J0)/(2*koren);
+A = @(t) c1*exp(koren*t) + c2*exp(-koren * t);
 
-% Pocetne jednacine
-A = @(t) ((ab*A0 - a*B0)/(2*ab))*exp(ab*t) + ((ab*A0 + a*B0)/(2*ab))*exp(-ab * t);
-B = @(t) ((ab*B0 - b*A0)/(2 * ab))*exp(ab * t) + ((ab * B0 + b*A0)/(2*ab))*exp(-ab * t);
+% Jednacina za Japance koja zavisi od t
+k1 = (koren*J0 - efiAmer*A0)/(2*koren);
+k2 = (koren*J0 + efiAmer*A0)/(2*koren);
+J = @(t) k1*exp(koren * t) + k2*exp(-koren * t);
 
-
-AP = @(t) ((ab*A0 - a*B0)/(2))*exp(ab * t) - ((ab*A0 + a*B0)/(2))*exp(-ab * t);
-BP = @(t) ((ab*B0 - b*A0)/(2))*exp(ab * t) - ((ab*B0 + b*A0)/(2))*exp(-ab * t);
-
-
-% Koliko vojnika treba dodati da bi se bitka zavrsila za 28 dana
-dA = (ab * A0 * exp(ab * 28) + ab * A0 * exp(-ab * 28))/(a*exp(ab*28) - a*exp(-ab*28)) - B0;
-
-% Racunanje vremena za prvu stavku
-c1 = (ab*A0 - a*B0)/(2*ab);
-c2 = (ab*A0 + a*B0)/(2*ab);
-time = (log(c2) - log(-c1))/(2*ab)
+% Formula koja racuna vreme kada Japanci gube: J(t) = 0
+timeJap = (log(k2) - log(-k1))/(2*koren);
