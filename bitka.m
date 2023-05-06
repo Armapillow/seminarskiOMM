@@ -1,43 +1,35 @@
+clear; clc;
 
-% Snage vojske
-A = 54000;
-J = 21500;
+% ZADATAK:
+%   Koliko je dugo trajala bitka do istrebljenja jednog od učesnika? 
+%   Koliko je preostalo vojnika na pobedničkoj strani?
 
-% Efikasnost vojske
-efiAmer = 0.0106;
-efiJap  = 0.0544;
+% Ucitavanje osnovnih podataka
+formule;
 
-
-X = [J, A];
+% Resavanje sistema dif jednacina
+X = [J0, A0];
 f = @(t, x) [-efiAmer*x(2); -efiJap * x(1)];
+span = linspace(0, 70, 20000);
+[t, xx] = ode45(f, span, X);
 
-span = linspace(0, 70, 10000);
-[t, x] = ode45(f, span, X);
-
-size(x);
-size(span);
-
-index = find(x(:, 1) < 0, 1);
+% Pronalazimo index kada japanska vojska ode u minus, pa uzimamo index pre toga
+index = find(xx(:, 1) < 0, 1) - 1;
+% Citamo vreme zavrsetka bitke
 time  = t(index);
-sldrs = x(index, 2);
+% Citamo koliko je americkih vojnika ostalo
+sldrs = xx(index, 2);
 
+fprintf('\n');
+fprintf('Vreme trajanja bitke: %5d\n', ceil(time));
+fprintf('Broj preostalih vojnika: %5d\n\n', floor(sldrs));
 
-fprintf('Vreme trajanja bitke: %f\n', time);
-fprintf('Broj preostalih vojnika: %f\n', sldrs);
-
-plot(t, x(:, 1), t, x(:, 2));
-
+% Plotujemo rezultate
+plot(t, xx(:, 1), t, xx(:, 2));
 % Ne radi u Octave
-yline(0, '-', 'Istrebljenje');
-
-xlabel('vreme')
-ylabel('vojnici')
+yl = yline(0, '-', 'Istrebljenje');
+yl.LabelHorizontalAlignment = 'left';
+xlabel('Vreme')
+ylabel('Vojnici')
 legend('Japanci', 'Amerikanci');
-
-
-% ind30 = find(t < 30, 1, 'last') + 1;
-% jap30 = x(ind30, 1);
-% amer30 = x(ind30, 2);
-
-% fprintf('Ameri posle 30 dana: %f\n', floor(amer30));
-% fprintf('Japanci posle 30 dana: %f\n', floor(jap30));
+title('Broj vojnika kroz vreme');
