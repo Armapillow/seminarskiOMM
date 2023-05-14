@@ -96,16 +96,15 @@ bitke baziran na sistemu diferencijalnih jednačina.
 
 \hspace*{5mm}
 Baziramo model na Lančesterovom zakonu bitke naoružanih vojski (Lanchester’s
-Square Law)~\cite{wiki}. Označićemo sa \(A\) --- Amerikance, a sa \(J\) --- Japance.
+Square Law)~\cite{wiki}. Označićemo sa \(A\) --- Amerikance, a sa \(J\) --- Japance:
 
 \begin{equation}\label{pocetna_A}
 \frac{dA}{dt} = - \lambda_{J}J
 \end{equation}
 
 \begin{equation}\label{pocetna_J}
-\frac{dJ}{dt} = - \lambda_{A}A
+\frac{dJ}{dt} = - \lambda_{A}A.
 \end{equation}
-
 
 Ovaj sistem diferencijalnih jednačina možemo rešiti deljenjem ove dve jednačine,
 i iz toga dobijamo:
@@ -119,29 +118,29 @@ i iz toga dobijamo:
 \]
 
 \begin{equation}\label{za_integ}
-  \lambda_{A}A\,dA = \lambda_{J}J\,dJ
+  \lambda_{A}A\,dA = \lambda_{J}J\,dJ.
 \end{equation}
 
-integralimo jednačinu (\ref{za_integ}):
+Integralimo jednačinu (\ref{za_integ}):
 
 \[
   \lambda_{A}\int{} A\,dA = \lambda_{J} \int{} J\,dJ
 \]
 
 \[
-  \lambda_{A} \frac{\displaystyle A^2}{\displaystyle 2} + \underbrace{c\lambda_{A}}_{c_1}
-  = \lambda_{J} \frac{J^2}{2} + \underbrace{c\lambda_{J}}_{c_2}
+  \lambda_{A} \frac{\displaystyle A^2}{\displaystyle 2} + \underbrace{c_1\lambda_{A}}_{k_1}
+  = \lambda_{J} \frac{J^2}{2} + \underbrace{c_2\lambda_{J}}_{k_2}
 \]
 
 \begin{equation}\label{jedn1}
-  \lambda_{A} \frac{A^2}{2} - \lambda_{J} \frac{J^2}{2} = c_2 - c_1 = c
+  \lambda_{A} \frac{A^2}{2} - \lambda_{J} \frac{J^2}{2} = k_2 - k_1 = k.
 \end{equation}
 
 Za trenutak \(t = t_0 = 0\), sledi \(A(t_0) = A_0\) i \(J(t_0) = J_0\). Menjamo
 u jednačini (\ref{jedn1}) i dobijamo:
 
 \begin{equation}\label{jedn2}
-  \lambda_{A}\frac{A_{0}^2}{2} - \lambda_{J}\frac{J_{0}^2}{2} = c
+  \lambda_{A}\frac{A_{0}^2}{2} - \lambda_{J}\frac{J_{0}^2}{2} = k.
 \end{equation}
 
 Izjednačavamo jednačine (\ref{jedn1}) i (\ref{jedn2}):
@@ -151,18 +150,17 @@ Izjednačavamo jednačine (\ref{jedn1}) i (\ref{jedn2}):
 \lambda_{A}\frac{A_{0}^2}{2} - \lambda_{J}\frac{J_{0}^2}{2}
 \]
 
-Sređivanjem dobijamo:
+i sređivanjem dobijamo
 \begin{equation}\label{izjednacena}
-  \lambda_{A}A^2 - \lambda_{A}A_{0}^2 = \lambda_{J}J^2 - \lambda_{J}J_{0}^2
+  \lambda_{A}A^2 - \lambda_{A}A_{0}^2 = \lambda_{J}J^2 - \lambda_{J}J_{0}^2.
 \end{equation}
 
 Bitka traje dok jedna od strana ne izgubi sve vojnike. Ako uzmemo da je broj
 Japanca na kraju jednak nuli (\(J = 0\)), sređivanjem jednačine
-(\ref{izjednacena}) se dobija da je broj Američkih vojnika na kraju bitke
-jednak:
+(\ref{izjednacena}) dobijamo:
 
 \[
-  \lambda_{A}A^2 - \lambda_{A}A_{0}^2 = -\lambda_{J}J_{0}^2,
+  \lambda_{A}A^2 - \lambda_{A}A_{0}^2 = -\lambda_{J}J_{0}^2
 \]
 
 \begin{equation}\label{za_uslov}
@@ -170,11 +168,16 @@ jednak:
 \end{equation}
 
 \[
-  A^2 = A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2,
+  A^2 = A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2
 \]
 
+\[
+  A = \pm\sqrt{A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2}.
+\]
+Kako $A$ označava broj vojnika, odbacujemo rešenje manje od 0, pa je broj američkih vojnika na kraju bitke jednak:
+
 \begin{equation}\label{brojAmeri}
-  A = \sqrt{A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2}
+  A = \sqrt{A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2}.
 \end{equation}
 
 Iz jednačine (\ref{za_uslov}) sledi uslov: 
@@ -190,10 +193,10 @@ Analogno se izvodi kad je broj Amerikanaca na kraju nula (\(A = 0\)):
 \]
 
 \begin{equation}\label{uslovJapanci}
-\lambda_{A}A_0^2 \leq \lambda_{J}J_0^2
+\lambda_{A}A_0^2 \leq \lambda_{J}J_0^2.
 \end{equation}
 
-Uslove (\ref{uslovAmeri}) i (\ref{uslovJapanci}) mozemo da koristimo kako bi na
+Uslove (\ref{uslovAmeri}) i (\ref{uslovJapanci}) možemo da koristimo kako bi na
 početku videli koja je vojska snažnija~\cite{lanchRad}.
 
 $\newline$
@@ -203,17 +206,17 @@ Početni sistem jednačina (\ref{pocetna_A}) i (\ref{pocetna_J}) možemo rešiti
 na sledeći način, difereciramo jednačinu (\ref{pocetna_A}) po \(t\):
 
 \[
-  A'' = -\lambda_{J}J'
+  A'' = -\lambda_{J}J',
 \]
 
-Izrazimo \(J'\) preko (\ref{pocetna_J}):
+izrazimo \(J'\) preko (\ref{pocetna_J}):
 
 \[
   A'' = -\lambda_{J}(-\lambda_{A}A) = \lambda_{A}\lambda_{J}A
 \]
 
 \[
-  A'' - \lambda_A\lambda_J A = 0
+  A'' - \lambda_A\lambda_J A = 0.
 \]
 
 Dobili smo linearnu diferencijalnu jednačinu drugog reda sa konstantnim
@@ -221,19 +224,19 @@ koeficijentima.  Nju rešavamo metodom karakterističnih funkcija: \(a^2 -
 \lambda_A\lambda_J = 0\), i dobijamo da je:
 
 \[
-  a_{1,2} = \pm \laj
+  a_{1,2} = \pm \laj.
 \]
 
 Kako su \(a_1\) i \(a_2\) realna i različita rešenja, onda je
 
 \begin{equation}\label{amerSaKoef}
-  A(t) = c_{1}e^{t\laj} + c_2 e^{-t \laj} \ 
+  A(t) = c_{1}e^{t\laj} + c_2 e^{-t \laj}  . \ 
 \end{equation}
 
 Kada gornju jednačinu diferenciramo po \(t\), dobijamo
 
 \begin{equation}\label{amerIzvod}
-  A'(t) = c_1 \laj e^{t \laj} - c_2 \laj e^{-t \laj}
+  A'(t) = c_1 \laj e^{t \laj} - c_2 \laj e^{-t \laj} .
 \end{equation}
 
 Jednačine (\ref{amerSaKoef}) i (\ref{amerIzvod}) čine sistem preko koga mozemo
@@ -243,46 +246,46 @@ Za \(t = 0\), imamo  \(A(0) = A_0\) i
 \(A'(0) = -\lambda_{J}J_0\), pa važi:
 
 \[
-  A_0 = c_1 + c_2
+  A_0 = c_1 + c_2,
 \]
 
 \[
-  -\lambda_{J}J_0 = c_1 \laj - c_2 \laj
+  -\lambda_{J}J_0 = c_1 \laj - c_2 \laj.
 \]
 
 Pomnožimo prvu jednačinu sa \( \laj \) i dodamo je
-drugoj kako bi dobili koef \( c_1 \):
+drugoj kako bismo dobili koef \( c_1 \):
 
 \[
   A_0 \laj - \lambda_{J}J_0 = 2 c_1 \laj
 \]
 
 \[
-  c_1 = \frac{A_0 \laj - \lambda_J J_0}{2\laj }
+  c_1 = \frac{A_0 \laj - \lambda_J J_0}{2\laj },
 \]
 
-Zamenom \(c_1\) u prvu jednačinu dobija se \(c_2\):
+a zatim zamenom \(c_1\) u prvu jednačinu dobijamo \(c_2\)
 
 \[
-  c_2 = \frac{A_0 \laj + \lambda_J J_0}{2\laj }
+  c_2 = \frac{A_0 \laj + \lambda_J J_0}{2\laj }.
 \]
 
 Zamenom u jednačinu (\ref{amerSaKoef}) dobijamo izvedeno \(A(t)\):
 
 \begin{equation}\label{ameri_cela}
   A(t) = \frac{A_0 \laj - \lambda_J J_0}{2 \laj } e^{t \laj } + \frac{A_0 \laj +
-\lambda_J J_0}{2 \laj } e^{-t \laj}
+\lambda_J J_0}{2 \laj } e^{-t \laj}.
 \end{equation}
 \\
-Analognim izvođjenjem se dobija \(J(t)\):
+Analognim izvođenjem se dobija \(J(t)\):
 
 \begin{equation}\label{japanci_cela}
-  J(t) = c_1 e^{t \laj} + c_2 e^{-t \laj}
+  J(t) = c_1 e^{t \laj} + c_2 e^{-t \laj},
 \end{equation}
 
 \[
  c_1 = \frac{J_0 \laj- \lambda_A A_0}{2\laj},\ 
- c_2 = \frac{J_0 \laj+ \lambda_A A_0}{2 \laj}
+ c_2 = \frac{J_0 \laj+ \lambda_A A_0}{2 \laj}.
 \]
 
 
@@ -303,7 +306,7 @@ strani?
 Zamenom konkretnih vrednosti u \(\lambda_{A}A_0^2\) i u \(\lambda_{J}J_0^2\)
 dobijamo da je \(\lambda_{A}A_0^2 \geq \lambda_{J}J_0^2\). Odatle sledi da ce
 Japanci izgubiti bitku.
-Kako je \(J(t) = 0\) mozemo da izrazimo \(t\) koristeci jednačinu
+Kako je \(J(t) = 0\) možemo da izrazimo \(t\) koristeći jednačinu
 (\ref{japanci_cela}).
 
 \[
@@ -311,7 +314,7 @@ Kako je \(J(t) = 0\) mozemo da izrazimo \(t\) koristeci jednačinu
 \]
 
 \[
-  -c_1 e^{t \laj} = c_2 e^{-t \laj}
+  -c_1 e^{t \laj} = c_2 e^{-t \laj}.
 \]
 
 Logaritmujemo celu jednačinu i posle malo sređivanja dobijamo:
@@ -321,11 +324,11 @@ Logaritmujemo celu jednačinu i posle malo sređivanja dobijamo:
 \]
 
 \[
-  t = \frac{ln(c_2) - ln(-c_1)}{2\laj}, 
+  t = \frac{ln(c_2) - ln(-c_1)}{2\laj} .
 \]
 
 Zamenom konkretnih vrednosti računamo koeficijente \(c_1\) i \(c_2\) i dobijamo da je vreme trajanja bitke \(t = 61.778 \approx 62\) dana.
-Broj američkih vojnika mozemo da izračunamo iz jednačine (\ref{brojAmeri}): 
+Broj američkih vojnika možemo da izračunamo iz jednačine (\ref{brojAmeri}): 
 
 \[
   A = \sqrt{A_{0}^2 - \frac{\lambda_J}{\lambda_A}J_0^2},
@@ -354,7 +357,7 @@ Koliko vojnika ostane posle 30 dana možemo egzaktno izračunati koristeći form
 Dobijamo da je \(A(30) = 30426\) i \(J(30) = 8628\). Preko uslova
 (\ref{uslovJapanci}) možemo izračunati koliko najmanje Japanca treba da bi oni
 pobedeili Amerikance. Naime, kako znamo da uslov (\ref{uslovJapanci}) važi ako
-su Japanci snažniji, odatle mozemo da izvučemo koliko je \(J_0\).
+su Japanci snažniji, odatle možemo da izvučemo koliko je \(J_0\).
 
 \[
   \lambda_{A}A_0^2 \leq \lambda_{J}J_0^2
@@ -365,7 +368,7 @@ su Japanci snažniji, odatle mozemo da izvučemo koliko je \(J_0\).
 \]
 
 \[
-  J_0 \geq \sqrt{\frac{\lambda_A}{\lambda_J} A_0^2}
+  J_0 \geq \sqrt{\frac{\lambda_A}{\lambda_J} A_0^2}.
 \]
 
 Ako je novo \(A_0 = A(30)\) i novo \(J_0 = J(30) + \Delta J\), zamenom novog \(A_0\) u gornju formulu i zaokruživanjem na gornji ceo broj dobija se da je 13432 početni
@@ -389,13 +392,13 @@ pojačanje Japanaca.
 \end{quote}
 
 \hspace{5mm}
-Pošto će Amerikanci pobediti, onda ce Japanca biti nula posle 28 dana,
+Pošto će Amerikanci pobediti, onda će Japanaca biti nula posle 28 dana,
 tačnije \(J(28) = 0\). Potrebno je pronaći \(A_0\) koje će biti dovoljno
 za to. Koristićemo jednačinu (\ref{japanci_cela}), gde je \(t = 28\).
 
 \[
 0 = \frac{J_0 \laj - \lambda_A A_0}{2\laj} e^{28 \laj } +
-    \frac{J_0 \laj + \lambda_A A_0}{2 \laj } e^{-28 \laj },
+    \frac{J_0 \laj + \lambda_A A_0}{2 \laj } e^{-28 \laj }.
 \]
 
 Skratimo imenioce i pomnožimo:
@@ -414,11 +417,11 @@ Skratimo imenioce i pomnožimo:
 \[
   A_0 =
   \frac{J_0 \laj(e^{28 \laj} + e^{-28 \laj})}
-  {\lambda_A (e^{28 \laj} - e^{-28 \laj})}
+  {\lambda_A (e^{28 \laj} - e^{-28 \laj})}.
 \]
 \\
 Zamenom konkretnih vrednosti dobije se da početni broj američkih vojnika
-jednak \(A_0 = 83040\). \\
+jednak \\ \(A_0 = 83040\). \\
 
 \begin{figure}[htbp]
     \center
