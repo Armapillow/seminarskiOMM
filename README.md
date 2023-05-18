@@ -11,10 +11,10 @@ japansku vojsku, respektivno.
   * ![](./rad/img/bitka.jpg)
 * Posle 30 dana, koliko pojačanje bi trebalo da stigne Japancima da ne bi
   izgubili bitku?
-  * ![](./rad/img/bitka28.jpg)
+  * ![](./rad/img/bitka30.jpg)
 * Ukoliko je potrebno da se pobeda ostvari za 28 dana, koliko vojnika je
   neophodno da Amerikanci imaju u početku?
-  * ![](./rad/img/bitka30.jpg)
+  * ![](./rad/img/bitka28.jpg)
 
 ---
 
